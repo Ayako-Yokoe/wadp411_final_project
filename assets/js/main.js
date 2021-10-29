@@ -1,13 +1,27 @@
-/*
-     order ??? 
-*/
-
-
-/* ======================== 
- country (only works if on the top)
-========================= */
 
 $(document).ready(function(){
+
+/* navbar */
+
+    $( ".cross" ).hide();
+    $( ".nav-list-hamburger" ).hide();
+
+    $( ".hamburger" ).click(function() {
+        $( ".nav-list-hamburger" ).slideToggle( "slow", function() {
+        $( ".hamburger" ).hide();
+        $( ".cross" ).show();
+        });
+    });
+
+    $( ".cross" ).click(function() {
+    $( ".nav-list-hamburger" ).slideToggle( "slow", function() {
+        $( ".cross" ).hide();
+        $( ".hamburger" ).show();
+        });
+    });
+
+/* country */
+
     $('#countyList li a').click(function(e){
         e.preventDefault();
         $('#countyList li a').removeClass('active');
@@ -21,11 +35,11 @@ $(document).ready(function(){
             $('.'+targetedItem).show();
         }
     })
+
 })
 
-/* ======================== 
- gallery
-========================= */
+/*  gallery */
+
 new Swiper('.gallery-slider',{
     speed: 500,
     loop: true,
@@ -40,13 +54,3 @@ new Swiper('.gallery-slider',{
         clickable: true
     }
 });
-
-
-
-
-/*
-
-    6 questions
-
-*/
-
